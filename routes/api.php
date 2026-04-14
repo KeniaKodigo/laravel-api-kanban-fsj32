@@ -15,4 +15,11 @@ Route::get('/user', function (Request $request) {
 Route::get('/messages', [TaskController::class, 'imprimirMensaje']);
 Route::get('/users', [TestController::class, 'getUsers']);
 
+Route::post('/v1/tasks', [TaskController::class, 'store']);
 
+// peticiones HTTP: GET, PUT, DELETE, POST, PATCH
+// crear un nuevo recurso (POST)
+// obtener datos de un recurso (GET)
+// actualizar TODA la informacion del recurso (PUT)
+// actualizar UNA PARTE DE la informacion del recurso (PATCH)
+// eliminar un recurso (DELETE)
