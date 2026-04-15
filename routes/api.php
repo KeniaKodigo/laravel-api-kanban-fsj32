@@ -15,7 +15,13 @@ Route::get('/user', function (Request $request) {
 Route::get('/messages', [TaskController::class, 'imprimirMensaje']);
 Route::get('/users', [TestController::class, 'getUsers']);
 
+# ------------------------ RUTAS DE LAS TAREAS ----------------------
+Route::get('/v1/tasks', [TaskController::class, 'index']);
 Route::post('/v1/tasks', [TaskController::class, 'store']);
+# ruta con parametro
+Route::get('/v1/tasks/{taskId}', [TaskController::class, 'show']);
+Route::patch('/v1/tasks/{taskId}', [TaskController::class, 'update']);
+
 
 // peticiones HTTP: GET, PUT, DELETE, POST, PATCH
 // crear un nuevo recurso (POST)
