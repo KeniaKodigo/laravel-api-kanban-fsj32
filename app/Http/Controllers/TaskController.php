@@ -60,4 +60,12 @@ class TaskController extends Controller
         $task->update($request->all());
         return response()->json(["message" => "Tarea actualizada correctamente"], 200);
     }
+
+    // metodo para eliminar una tarea por su ID
+    public function destroy($taskId){
+        $task = Task::find($taskId);
+        $task->delete();
+        
+        return response()->json(["message" => "Tarea eliminada correctamente"], 200);
+    }
 }
