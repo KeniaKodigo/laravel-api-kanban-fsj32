@@ -64,9 +64,8 @@ class TaskController extends Controller
     #[OA\Post(
         path: "/tasks",
         tags: ["tasks"],
-        summary: "Create a new task",
+        summary: "Este endpoint es para crear tareas",
         description: "Creates a new task. Title must be unique and max 50 characters.",
-        security: [["bearerAuth" => []]],
         requestBody: new OA\RequestBody(
             required: true,
             description: "Task data for creation",
@@ -124,15 +123,6 @@ class TaskController extends Controller
                 content: new OA\JsonContent(
                     properties: [
                         new OA\Property(property: "message", type: "string", example: "Tarea creada correctamente"),
-                    ]
-                )
-            ),
-            new OA\Response(
-                response: 401,
-                description: "Unauthorized - Token missing or invalid",
-                content: new OA\JsonContent(
-                    properties: [
-                        new OA\Property(property: "message", type: "string", example: "Unauthenticated."),
                     ]
                 )
             ),

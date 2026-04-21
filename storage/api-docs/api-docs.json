@@ -176,7 +176,7 @@
                 "tags": [
                     "tasks"
                 ],
-                "summary": "Create a new task",
+                "summary": "Este endpoint es para crear tareas",
                 "description": "Creates a new task. Title must be unique and max 50 characters.",
                 "operationId": "9b481c0ed5fdfa1a592d70ba39a348ee",
                 "requestBody": {
@@ -259,22 +259,6 @@
                             }
                         }
                     },
-                    "401": {
-                        "description": "Unauthorized - Token missing or invalid",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "message": {
-                                            "type": "string",
-                                            "example": "Unauthenticated."
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
                     "422": {
                         "description": "Validation error",
                         "content": {
@@ -302,12 +286,7 @@
                             }
                         }
                     }
-                },
-                "security": [
-                    {
-                        "bearerAuth": []
-                    }
-                ]
+                }
             }
         },
         "/tasks/{taskId}": {
